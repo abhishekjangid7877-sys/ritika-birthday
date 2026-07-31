@@ -9,7 +9,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ff758c,#ff7eb3);
+background:linear-gradient(135deg,#141e30,#243b55);
 overflow:hidden;
 color:#fff;
 text-align:center;
@@ -31,7 +31,12 @@ font-size:18px;
 margin-top:20px;
 cursor:pointer;
 }
-.heart{
+.heart{.heart{
+position:absolute;
+font-size:25px;
+animation:float 6s linear infinite;
+text-shadow:0 0 10px #ff4d6d;
+}
 position:absolute;
 font-size:25px;
 animation:float 6s linear infinite;
@@ -49,10 +54,43 @@ animation:bounce 1.2s infinite;
 }
 </style>
 </head>
-<body>
+function fireworks(){
+
+for(let i=0;i<50;i++){
+
+let fire=document.createElement("div");
+
+fire.innerHTML="✨";
+
+fire.style.position="fixed";
+fire.style.left=Math.random()*100+"vw";
+fire.style.top=Math.random()*100+"vh";
+fire.style.fontSize="40px";
+fire.style.zIndex="9999";
+
+document.body.appendChild(fire);
+
+setTimeout(()=>{
+fire.remove();
+},2500);
+
+}
+}<script>
+let text="🎂 Happy Birthday Ritika ❤️";
+let i=0;
+
+function type(){
+ if(i<text.length){
+   document.getElementById("typing").innerHTML += text.charAt(i);
+   i++;
+   setTimeout(type,100);
+ }
+}
+type();
+</script><body>
 
 <div id="p1" class="page">
-<h1>🎂 Happy Birthday Ritika ❤️</h1>
+<h1 id="typing"></h1>
 <p style="margin-top:20px">
 Aaj ka din mere liye bahut special hai.....
 </p>
@@ -62,18 +100,23 @@ Aaj ka din mere liye bahut special hai.....
 <div id="p2" class="page hidden">
 <h2>💌 Birthday Wishes</h2>
 <p style="max-width:700px;margin-top:20px">
-Ritika, aaj tumhara special day hai.
-Main dil se dua karta hoon ki tumhari zindagi
-khushiyon, pyaar aur success se bhari rahe.
-Tumhari smile hamesha aise hi bani rahe.
-Thank you meri life ka itna special hissa banne ke liye. ❤️
+Ritika, aaj tumhara special day hai ❤️
+
+Main dil se dua karta hoon ki tumhari zindagi hamesha khushiyon se bhari rahe.
+
+Tumhari smile meri favourite cheez hai aur tumhara saath meri sabse badi khushi.
+
+Thank you meri life ko itna khoobsurat banane ke liye. ❤️
 </p>
 <button onclick="next('p2','p3')">Next 🎁</button>
 </div>
 
 <div id="p3" class="page hidden">
 <div class="gift">🎁</div>
-<h2>Special Gift For Ritika</h2>
+<h2>🎁 A Gift Filled With Love ❤️</h2><p>
+Har gift ki ek value hoti hai,
+lekin tum meri life ka sabse precious gift ho. ❤️
+</p>
 <button onclick="next('p3','p4')">Open Gift ❤️</button>
 </div>
 
@@ -95,7 +138,16 @@ Aaj tumhare birthday par main tumse ek sawaal poochna chahta hoon...
 </p>
 
 <h2 style="margin-top:25px">
-Will You Be Mine Forever? ❤️🌹
+<p style="max-width:700px;margin-top:20px">
+Ritika,
+
+Shayad main perfect nahi hoon,
+lekin tumhare saath har din perfect lagta hai.
+
+Tum meri smile ki wajah ho,
+meri khushi ka reason ho,
+aur meri life ka sabse khoobsurat chapter ho. ❤️
+</p>Will You Be Mine Today, Tomorrow And Forever? ❤️💍🌹
 </h2>
 
 <button onclick="yesClick()">Yes ❤️</button>
@@ -103,11 +155,22 @@ Will You Be Mine Forever? ❤️🌹
 </div>
 
 <div id="p6" class="page hidden">
-<h1>🎉 YAYYYY ❤️</h1>
-<h2>Happy Birthday Ritika 🎂</h2>
-<p style="margin-top:20px">
-You are the best thing that ever happened to me.
+<h1>🎉 Thank You Ritika ❤️</h1>
+
+<h2>Happy Birthday Once Again 🎂</h2>
+
+<p>
+Tum meri zindagi ki sabse khoobsurat muskaan ho.
 </p>
+
+<p>
+Aaj ka din aur bhi special banane ke liye thank you. ❤️
+</p>
+
+<h2>
+Forever Yours,<br>
+Abhi ❤️
+</h2>
 <h3 style="margin-top:20px">
 Forever Yours,<br>Abhi ❤️
 </h3>
@@ -119,10 +182,26 @@ document.getElementById(a).classList.add("hidden");
 document.getElementById(b).classList.remove("hidden");
 }
 
+
 function yesClick(){
-next("p5","p6");
+
+for(let i=0;i<100;i++){
+let heart=document.createElement("div");
+heart.innerHTML="💖";
+heart.style.position="fixed";
+heart.style.left=Math.random()*100+"vw";
+heart.style.top=Math.random()*100+"vh";
+heart.style.fontSize="30px";
+heart.style.zIndex="9999";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},3000);
 }
 
+next("p5","p6");
+}
 let no=document.getElementById("noBtn");
 no.addEventListener("mouseover",()=>{
 no.style.position="absolute";
