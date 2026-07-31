@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Ritika ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+overflow:hidden;
+color:#fff;
+text-align:center;
+}
+.page{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+.hidden{display:none}
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+font-size:18px;
+margin-top:20px;
+cursor:pointer;
+}
+.heart{
+position:absolute;
+font-size:25px;
+animation:float 6s linear infinite;
+}
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-100px)}
+}
+.gift{
+font-size:100px;
+animation:bounce 1.2s infinite;
+}
+@keyframes bounce{
+50%{transform:translateY(-15px)}
+}
+</style>
+</head>
+<body>
+
+<div id="p1" class="page">
+<h1>🎂 Happy Birthday Ritika ❤️</h1>
+<p style="margin-top:20px">
+Aaj ka din mere liye bahut special hai...
+</p>
+<button onclick="next('p1','p2')">Continue ✨</button>
+</div>
+
+<div id="p2" class="page hidden">
+<h2>💌 Birthday Wishes</h2>
+<p style="max-width:700px;margin-top:20px">
+Ritika, aaj tumhara special day hai.
+Main dil se dua karta hoon ki tumhari zindagi
+khushiyon, pyaar aur success se bhari rahe.
+Tumhari smile hamesha aise hi bani rahe.
+Thank you meri life ka itna special hissa banne ke liye. ❤️
+</p>
+<button onclick="next('p2','p3')">Next 🎁</button>
+</div>
+
+<div id="p3" class="page hidden">
+<div class="gift">🎁</div>
+<h2>Special Gift For Ritika</h2>
+<button onclick="next('p3','p4')">Open Gift ❤️</button>
+</div>
+
+<div id="p4" class="page hidden">
+<h2>🌹 A Small Message</h2>
+<p style="max-width:700px;margin-top:20px">
+Tum shayad nahi jaanti ki tum meri life mein
+kitni important ho.
+Tumhari ek smile mera poora din achha bana deti hai.
+Tumhare saath bitaya har pal mere liye special hai. ❤️
+</p>
+<button onclick="next('p4','p5')">One Last Surprise ✨</button>
+</div>
+
+<div id="p5" class="page hidden">
+<h1>💍 Dear Ritika</h1>
+<p style="max-width:700px;margin-top:20px">
+Aaj tumhare birthday par main tumse ek sawaal poochna chahta hoon...
+</p>
+
+<h2 style="margin-top:25px">
+Will You Be Mine Forever? ❤️🌹
+</h2>
+
+<button onclick="yesClick()">Yes ❤️</button>
+<button id="noBtn">No 😅</button>
+</div>
+
+<div id="p6" class="page hidden">
+<h1>🎉 YAYYYY ❤️</h1>
+<h2>Happy Birthday Ritika 🎂</h2>
+<p style="margin-top:20px">
+You are the best thing that ever happened to me.
+</p>
+<h3 style="margin-top:20px">
+Forever Yours,<br>Abhi ❤️
+</h3>
+</div>
+
+<script>
+function next(a,b){
+document.getElementById(a).classList.add("hidden");
+document.getElementById(b).classList.remove("hidden");
+}
+
+function yesClick(){
+next("p5","p6");
+}
+
+let no=document.getElementById("noBtn");
+no.addEventListener("mouseover",()=>{
+no.style.position="absolute";
+no.style.left=Math.random()*80+"vw";
+no.style.top=Math.random()*80+"vh";
+});
+
+for(let i=0;i<50;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(3+Math.random()*5)+"s";
+document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
